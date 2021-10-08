@@ -9,6 +9,7 @@ pipeline {
         stage('build') {
             steps {
                 echo 'Building ...'
+                sh 'sudo chown -R 501:20 "/.npm'
                 sh 'npm install'
             }
         }
