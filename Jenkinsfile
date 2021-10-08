@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image "node:bullseye-slim"
+            image "node:14-alpine"
         }
     }
     
@@ -9,8 +9,8 @@ pipeline {
         stage('build') {
             steps {
                 echo 'Building ...'
-                sh 'sudo chown -R 501:20 "/usr/local/bin/npm"'
-                sh 'nvm install'
+                //sh 'sudo chown -R 501:20 "/usr/local/bin/npm"'
+                sh 'nvm install react'
             }
         }
 
