@@ -9,8 +9,8 @@ pipeline {
         stage('build') {
             steps {
                 echo 'Building ...'
-                sh 'ls -a'
-                sh 'chown -R 501:20 "/.npm"'
+                sh 'chown -R 501:20 "usr/local/bin/npm"'
+                sh 'nvm install'
             }
         }
 
