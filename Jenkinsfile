@@ -9,7 +9,7 @@ pipeline {
         stage('build') {
             steps {
                 echo 'Building ...'
-                echo 'ls -a'
+                echo 'ls -a /usr/local/bin'
             }
         }
 
