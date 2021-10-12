@@ -1,12 +1,16 @@
 pipeline {
-    agent { dockerfile true }
+    agent { 
+        docker {
+            image 'node:14-alpine'
+            args '-u root'
+        }
+     }
     
     stages {
         stage('build') {
             steps {
                 echo 'Building ...'
-                //sh 'sudo chown -R 501:20 "/usr/local/bin/npm"'
-                sh 'node --version'
+                sh 'npm install'
                 sh 'npm -v'
             }
         }
